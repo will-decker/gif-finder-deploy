@@ -1,0 +1,32 @@
+{
+  "name": "gif-finder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "start": "webpack-dev-server --open",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/will-decker/gif-finder.git"
+  },
+  "author": "Will Decker",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/will-decker/gif-finder/issues"
+  },
+  "homepage": "https://github.com/will-decker/gif-finder#readme",
+  "devDependencies": {
+    "@babel/core": "^7.11.1",
+    "@babel/preset-env": "^7.11.0",
+    "babel-loader": "^8.1.0",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "dependencies": {
+    "macy": "^2.5.1"
+  }
+}

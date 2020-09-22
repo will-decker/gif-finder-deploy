@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <title>GIF Finder</title>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <a href="index.html">
+          <div class="logo">GIF Finder</div>
+        </a>
+
+        <div id="search-container">
+          <input
+            type="text"
+            placeholder="Search GIFs"
+            value=""
+            id="searchInput"
+          />
+          <button type="submit" id="searchBtn">Search</button>
+        </div>
+        <div class="nav-btn-container">
+          <div id="trending" class="nav-link">Trending</div>
+          <div id="favorites" class="nav-link">Favorites</div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section>
+        <h2>TRENDING</h2>
+        <div id="gif-grid"></div>
+        <div class="loading">
+          <div class="sk-grid">
+            <div class="sk-grid-cube"></div>
+            <div class="sk-grid-cube"></div>
+            <div class="sk-grid-cube"></div>
+            <div class="sk-grid-cube"></div>
+            <div class="sk-grid-cube"></div>
+            <div class="sk-grid-cube"></div>
+            <div class="sk-grid-cube"></div>
+            <div class="sk-grid-cube"></div>
+            <div class="sk-grid-cube"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>Coded by Will Decker</footer>
+    <script type="text/javascript" src="bundle.js"></script>
+  </body>
+</html>

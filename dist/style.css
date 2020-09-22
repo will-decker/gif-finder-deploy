@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@900&family=Montserrat:wght@500&display=swap');
+
+/* Config */
+:root {
+  --sk-size: 40px;
+  --sk-color: rgb(241, 238, 238);
+  --darker: #163a5f;
+  --secondary: #1d566e;
+  --primary: #21aba5;
+  --highlight: #45eba5;
+}
+
+/* Utility class for centering */
+.sk-center {
+  margin: auto;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--secondary); /* fallback for old browsers */
+  background: linear-gradient(to top, var(--primary) 0, var(--secondary) 100%);
+  background-attachment: fixed;
+  /* background-size: 100% 600vh;
+  background-repeat: repeat-y; */
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  background: transparent;
+  width: 100%;
+  z-index: 100;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 45px;
+}
+
+nav a {
+  color: white;
+  width: 100%;
+  text-decoration: none;
+}
+
+.logo {
+  font-family: 'Kanit', sans-serif;
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: var(--highlight);
+  width: 100%;
+}
+
+#search-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+#searchInput {
+  padding: 10px;
+  max-width: 500px;
+  width: 100%;
+  border: none;
+}
+
+#searchBtn {
+  cursor: pointer;
+  background: var(--darker);
+  border: none;
+  color: white;
+}
+
+.nav-btn-container {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  height: 36px;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 100px;
+  height: 100%;
+}
+
+main {
+  height: 100%;
+  max-width: 1040px;
+  margin: 135px auto;
+}
+
+#gif-grid {
+  width: 100%;
+  /* display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-auto-rows: minmax(35px, 300px); */
+}
+
+/* #gif-grid .gif-block:nth-child(5n) {
+  grid-column-end: span 2;
+} */
+
+/* #gif-grid.images-unloaded {
+  opacity: 0;
+} */
+
+#gif-grid img {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hide {
+  opacity: 0;
+}
+
+.gif-block {
+  cursor: pointer;
+  position: relative;
+  width: 33%;
+  transition: opacity 0.6s ease-in-out;
+}
+
+.gif-block::after {
+  content: '';
+  position: absolute;
+  display: block;
+  background: var(--highlight); /* fallback for old browsers */
+
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0,
+    var(--highlight) 82%
+  );
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.gif-block:hover:after {
+  opacity: 1;
+}
+
+.gif-block .gif-title {
+  display: flex;
+  align-items: flex-end;
+  color: #f3eee5;
+  padding: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  z-index: 1;
+}
+
+.gif-block .gif-title:hover {
+  opacity: 1;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
+  height: 40px;
+  background-color: var(--darker);
+  padding-top: 25px;
+}
+
+/*  Grid   */
+.sk-grid {
+  width: var(--sk-size);
+  height: var(--sk-size);
+  /* Cube positions
+   * 1 2 3
+   * 4 5 6
+   * 7 8 9
+   */
+}
+.sk-grid-cube {
+  width: 33.33%;
+  height: 33.33%;
+  background-color: var(--sk-color);
+  float: left;
+  animation: sk-grid 1.3s infinite ease-in-out;
+}
+.sk-grid-cube:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.sk-grid-cube:nth-child(2) {
+  animation-delay: 0.3s;
+}
+.sk-grid-cube:nth-child(3) {
+  animation-delay: 0.4s;
+}
+.sk-grid-cube:nth-child(4) {
+  animation-delay: 0.1s;
+}
+.sk-grid-cube:nth-child(5) {
+  animation-delay: 0.2s;
+}
+.sk-grid-cube:nth-child(6) {
+  animation-delay: 0.3s;
+}
+.sk-grid-cube:nth-child(7) {
+  animation-delay: 0s;
+}
+.sk-grid-cube:nth-child(8) {
+  animation-delay: 0.1s;
+}
+.sk-grid-cube:nth-child(9) {
+  animation-delay: 0.2s;
+}
+
+@keyframes sk-grid {
+  0%,
+  70%,
+  100% {
+    transform: scale3D(1, 1, 1);
+  }
+  35% {
+    transform: scale3D(0, 0, 1);
+  }
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  padding-top: 25px;
+}
+
+/* .slide-in { transform: 'translateY(0)'; opacity: 1 },
+  .hide { transform: 'translateY(100px)'; opacity: 0 }, */
